@@ -15,6 +15,8 @@ namespace PokemonObjectsAndStuff
         public Player()
         {
             Pokeball = 10;
+            StarterPokemon = new Pikachu();
+            PokemonInventory = new List<Pokemon>();
         }
 
         public void WalkInGrass(Pokemon randomPokemon)
@@ -42,9 +44,10 @@ namespace PokemonObjectsAndStuff
             while (Pokeball > 0)
             {
                 var isSuccessFull = Convert.ToBoolean(random.Next(0, 2));
-                Console.WriteLine($"You caught {pokemonToCatch.Name}");
+               
                 if (isSuccessFull == true)
                 {
+                    Console.WriteLine($"You caught {pokemonToCatch.Name}");
                     PokemonInventory.Add(pokemonToCatch);
                     break;
                 }
